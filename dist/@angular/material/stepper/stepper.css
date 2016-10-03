@@ -1,0 +1,397 @@
+.md-step-horizontal-old :host {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.md-step-horizontal-old .md-step-header {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0; }
+
+.md-step-horizontal-old .md-step-label {
+  /*
+    line-height: $md-step-bar-height;
+    height: $md-step-bar-height;
+    padding: 0 12px;
+    font-size: $md-body-font-size-base;
+    font-family: $md-font-family;
+    font-weight: 500;
+    cursor: pointer;
+    box-sizing: border-box;
+    color: currentColor;
+    opacity: 0.6;
+    min-width: 160px;
+    text-align: center;
+    */ }
+  .md-step-horizontal-old .md-step-label:focus {
+    outline: none;
+    opacity: 1;
+    background-color: rgba(1, 1, 1, 0.1); }
+
+.md-step-horizontal-old .md-step-disabled {
+  cursor: default;
+  pointer-events: none; }
+
+.md-step-horizontal-old .md-step-body-wrapper {
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+  display: flex; }
+
+.md-step-horizontal-old .md-step-body {
+  display: none;
+  overflow: auto;
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-shrink: 1; }
+  .md-step-horizontal-old .md-step-body.md-step-active {
+    display: block; }
+
+.md-step-horizontal-old .md-step-header {
+  position: relative;
+  overflow: hidden;
+  height: 72px;
+  display: block;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.38); }
+
+.md-step-horizontal-old .md-steps {
+  display: flex;
+  min-width: 100%;
+  align-content: stretch; }
+
+.md-step-horizontal-old .md-stepper-item-container {
+  display: flex;
+  cursor: pointer; }
+
+.md-step-horizontal-old .md-step {
+  display: inline-flex;
+  flex-basis: 100%; }
+  .md-step-horizontal-old .md-step::before {
+    background: rgba(0, 0, 0, 0.38);
+    display: inline-flex;
+    height: 1px;
+    content: '';
+    flex-grow: 1;
+    align-self: center; }
+  .md-step-horizontal-old .md-step:first-child::before {
+    background: transparent; }
+  .md-step-horizontal-old .md-step::after {
+    background: rgba(0, 0, 0, 0.38);
+    display: inline-flex;
+    height: 1px;
+    content: '';
+    flex-grow: 1;
+    align-self: center; }
+  .md-step-horizontal-old .md-step:last-child::after {
+    background: transparent; }
+
+.md-step-horizontal-old .md-stepper-circle-container {
+  padding: 24px 8px 24px 24px; }
+
+.md-step-horizontal-old .md-step-icon {
+  display: block;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.38);
+  width: 24px;
+  height: 24px;
+  color: white;
+  background-clip: content-box;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px; }
+  .md-step-horizontal-old .md-step-icon.md-step-active {
+    background-color: #ff98a7; }
+  .md-step-horizontal-old .md-step-icon md-icon {
+    font-size: 16px;
+    line-height: 24px; }
+
+.md-step-horizontal-old .md-step-label {
+  padding-right: 8px;
+  align-self: center; }
+
+.md-step-horizontal-old .md-step-title {
+  font-size: 14px; }
+  .md-step-horizontal-old .md-step-title.md-step-active {
+    font-weight: bold; }
+
+.md-step-horizontal-old .md-step-optional {
+  align-self: center;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.54); }
+
+.md-stepper {
+  position: relative;
+  font-family: "Roboto",sans-serif;
+  background-color: white;
+  display: block;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden; }
+
+.text-roboto {
+  font-family: Roboto, 'Helvetica Neue', sans-serif !important; }
+
+.md-steps-wrapper {
+  position: relative;
+  display: flex;
+  max-height: 72px;
+  justify-content: space-between;
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.38); }
+  .md-steps-wrapper::after {
+    content: '';
+    position: absolute;
+    flex: 1;
+    top: 36px;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 0; }
+
+.md-step-wrapper {
+  background: #FFF;
+  display: flex;
+  z-index: 1; }
+  .md-step-wrapper:focus, .md-step-wrapper:hover, .md-step-wrapper.md-step-active, .md-step-wrapper.md-step-completed {
+    outline: none;
+    opacity: 1; }
+  .md-step-wrapper.md-step-active .md-step-icon .material-icons, .md-step-wrapper.md-step-completed .md-step-icon .material-icons {
+    background: #4285f4; }
+  .md-step-wrapper.md-step-active .md-step-title, .md-step-wrapper.md-step-completed .md-step-title {
+    font-weight: bold; }
+  .md-step-wrapper:focus, .md-step-wrapper:hover {
+    background: #f6f6f6; }
+
+/**
+  * The reason the step container has a child element for the step is for the vertical option
+  * when the step content and nav is placed inside the step itself.
+  */
+.md-step-item-wrapper {
+  display: flex;
+  padding: 24px;
+  background: #FFF;
+  z-index: 1; }
+
+.md-step-feedback {
+  opacity: 1; }
+
+.md-step-transient-feedback {
+  background-color: #FFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  height: 72px;
+  cursor: default;
+  z-index: 2; }
+
+.md-step-icon {
+  display: flex;
+  padding-right: 5px; }
+  .md-step-icon .material-icons {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    justify-content: center;
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 100%;
+    color: #FFF; }
+
+.md-step-label {
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  padding-right: 8px;
+  padding-top: 1px; }
+
+.md-step-title {
+  font-size: 14px; }
+
+.md-step-optional {
+  font-size: 12px; }
+
+.md-step-warning {
+  opacity: 1; }
+  .md-step-warning .material-icons {
+    background: transparent !important;
+    font-size: 24px;
+    line-height: 24px;
+    color: #f44336; }
+  .md-step-warning .md-step-label {
+    margin-top: -4px; }
+  .md-step-warning .md-step-label, .md-step-warning .md-step-title, .md-step-warning .md-step-optional {
+    color: #f44336 !important; }
+
+.md-step-content-wrapper {
+  position: relative; }
+
+.md-step-transient-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99; }
+  .md-step-transient-overlay .md-step-progress {
+    width: 50px;
+    height: 50px; }
+
+.md-step-body {
+  padding: 24px; }
+
+.md-step-nav-wrapper {
+  padding: 24px; }
+
+.md-stepper-vertical .md-steps-wrapper {
+  max-height: none;
+  flex-direction: column; }
+  .md-stepper-vertical .md-steps-wrapper::after {
+    background: transparent; }
+
+.md-stepper-vertical .md-step-wrapper {
+  flex-direction: column; }
+  .md-stepper-vertical .md-step-wrapper:focus, .md-stepper-vertical .md-step-wrapper:hover {
+    background: transparent; }
+
+.md-stepper-vertical .md-step-item-wrapper {
+  position: relative;
+  height: 64px;
+  padding: 24px 24px 16px 24px;
+  overflow: hidden;
+  box-sizing: border-box; }
+  .md-stepper-vertical .md-step-item-wrapper:hover {
+    background: #f6f6f6; }
+
+.md-stepper-vertical .md-step-icon {
+  padding-right: 12px; }
+
+.md-stepper-vertical .md-step-transient-feedback {
+  height: 64px; }
+
+.md-stepper-vertical .md-step-content-wrapper, .md-stepper-vertical .md-step-nav-wrapper {
+  background: #FFF; }
+
+.md-stepper-vertical .md-step-body {
+  position: relative;
+  padding: 0 60px 16px 60px; }
+
+.md-stepper-vertical .md-step-nav {
+  padding: 6px 60px;
+  margin-bottom: 18px; }
+
+.md-stepper-vertical .md-step-warning .md-step-label {
+  padding-top: 20px; }
+
+.md-stepper-vertical-old .md-stepper {
+  font-family: "Roboto",sans-serif; }
+
+.md-stepper-vertical-old .md-steps {
+  position: relative;
+  font-family: "Roboto",sans-serif;
+  background-color: white;
+  display: block;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  padding: 24px 0;
+  max-width: 720px;
+  width: 100%;
+  border-radius: 2px; }
+
+.md-stepper-vertical-old .md-step {
+  position: relative;
+  display: list-item;
+  list-style: none; }
+  .md-stepper-vertical-old .md-step:not(.md-step-active) {
+    height: initial !important; }
+  .md-stepper-vertical-old .md-step:not(:last-child):after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 37px;
+    width: 1px;
+    height: calc(100% - 24px);
+    background-color: rgba(0, 0, 0, 0.1); }
+
+.md-stepper-vertical-old .md-step-item-container {
+  display: flex;
+  cursor: pointer;
+  padding: 24px 24px 24px 24px;
+  align-items: center; }
+  .md-stepper-vertical-old .md-step-item-container:hover {
+    background-color: #f0f6f0; }
+
+.md-stepper-vertical-old .md-step-transient-feedback {
+  background-color: #FFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  height: 72px;
+  cursor: default; }
+
+.md-stepper-vertical-old .md-step-icon {
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  display: flex;
+  order: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+  color: white;
+  margin-right: 12px;
+  margin-bottom: auto; }
+  .md-stepper-vertical-old .md-step-icon > :first-child {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    display: flex;
+    font-size: 15px;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center; }
+  .md-stepper-vertical-old .md-step-icon.md-step-active {
+    background-color: #ff98a7; }
+  .md-stepper-vertical-old .md-step-icon md-icon {
+    font-size: 16px;
+    line-height: 24px; }
+
+.md-stepper-vertical-old .md-step-label {
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  display: flex;
+  order: 2;
+  width: 100%; }
+
+.md-stepper-vertical-old .md-step-title {
+  font-size: 14px;
+  line-height: 28px; }
+  .md-stepper-vertical-old .md-step-title.md-step-active {
+    font-weight: bold; }
+
+.md-stepper-vertical-old .md-step-optional {
+  align-self: center;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.54); }
+
+.md-stepper-vertical-old .md-step-body-wrapper {
+  margin-left: 64px; }
+
+.md-stepper-vertical-old .md-step-nav-wrapper {
+  margin-left: 64px; }
+
+/*# sourceMappingURL=stepper.css.map */

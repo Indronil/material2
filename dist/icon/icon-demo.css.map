@@ -1,0 +1,1 @@
+{"version":3,"file":"icon/icon-demo.css","sources":["icon/icon-demo.scss"],"sourcesContent":[".demo-icon md-icon {\r\n  color: purple;\r\n}\r\n\r\n.demo-icon md-icon.green {\r\n  color: green;\r\n}\r\n"],"mappings":"AAAA,AAAW,UAAD,CAAC,OAAO,CAAC;EACjB,KAAK,EAAE,MAAO,GACf;;AAED,AAAkB,UAAR,CAAC,OAAO,AAAA,MAAM,CAAC;EACvB,KAAK,EAAE,KAAM,GACd","names":[],"sourceRoot":"/source/"}
