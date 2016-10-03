@@ -1,0 +1,226 @@
+<h1>Stepper - mode: {{mode}}, orientation: {{orientation}}</h1>
+<button md-botton *ngIf="mode == 'nonlinear'" (click)="mode = 'linear'">Change to linear</button>
+<button md-botton *ngIf="mode == 'linear'" (click)="mode = 'nonlinear'">Change to nonlinear</button>
+
+<button md-botton *ngIf="orientation == 'horizontal'" (click)="orientation = 'vertical'">Change to vertical</button>
+<button md-botton *ngIf="orientation == 'vertical'" (click)="orientation = 'horizontal'">Change to horizontal</button>
+
+<br>
+<div class="triangle">
+  <md-icon>warning</md-icon>
+</div>
+<br>
+
+
+<md-stepper class="demo-stepper" [(mode)]="mode" [(orientation)]="orientation" #stepper1>
+  <md-step [editable]="false"
+           [valid]="validState.one"
+           [saving]="savingState.one"
+           [feedback]="feedbackState.one"
+           [feedbackMessage]="'Some feedback message!'"
+           [warning]="warningState.one"
+           [warningMessage]="'Some warning message!'">
+    <template md-step-label>Label 1</template>
+    <template md-step-content>
+      This is the body of step one.
+      <br>
+      <br>
+      <br>
+      <button md-button (click)="validState.one = !validState.one">Toggle valid</button>
+      <button md-button (click)="savingState.one = !savingState.one;feedbackState.one = !feedbackState.one">Toggle saving</button>
+      <button md-button (click)="feedbackState.one = !feedbackState.one">Toggle feedback</button>
+      <button md-button (click)="warningState.one = !warningState.one">Toggle warning</button>
+    </template>
+    <template md-step-nav>
+      <button md-button [disabled]="!validState.one" (click)="stepper1.nextStep()">NEXT</button>
+    </template>
+  </md-step>
+  <md-step [valid]="validState.two"
+           [saving]="savingState.two"
+           [feedback]="feedbackState.two"
+           [feedbackMessage]="'Some feedback message!'"
+           [warning]="warningState.two"
+           [warningMessage]="'Some warning message!'">
+    <template md-step-label>Label 2</template>
+    <template md-step-content>
+      This is the body of step two.
+      <br>
+      <br>
+      <br>
+
+        <button md-button (click)="validState.two = !validState.two">Toggle valid</button>
+        <button md-button (click)="savingState.two = !savingState.two">Toggle saving</button>
+        <button md-button (click)="feedbackState.two = !feedbackState.two">Toggle feedback</button>
+        <button md-button (click)="warningState.two = !warningState.two">Toggle warning</button>
+    </template>
+    <template md-step-nav>
+      <button md-button (click)="stepper1.previousStep()">BACK</button>
+      <button md-button [disabled]="!validState.two" (click)="stepper1.nextStep()">NEXT</button>
+    </template>
+  </md-step>
+  <md-step [valid]="validState.three"
+           [editable]="false"
+           [saving]="savingState.three"
+           [feedback]="feedbackState.three"
+           [feedbackMessage]="'Some feedback message!'"
+           [warning]="warningState.three"
+           [warningMessage]="'Some warning message!'">
+    <template md-step-label>Label 3</template>
+    <template md-step-content>
+      This is the body of step three.
+      <br>
+      <br>
+      <br>
+
+      <button md-button (click)="validState.three = !validState.three">Toggle valid</button>
+      <button md-button (click)="savingState.three = !savingState.three">Toggle saving</button>
+      <button md-button (click)="feedbackState.three = !feedbackState.three">Toggle feedback</button>
+      <button md-button (click)="warningState.three = !warningState.three">Toggle warning</button>
+    </template>
+    <template md-step-nav>
+      <button md-button (click)="stepper1.previousStep()">BACK</button>
+      <button md-button [disabled]="!validState.three" (click)="stepper1.nextStep()">NEXT</button>
+    </template>
+  </md-step>
+  <md-step [valid]="validState.four"
+           [saving]="savingState.four"
+           [feedback]="feedbackState.four"
+           [feedbackMessage]="'Some feedback message!'"
+           [warning]="warningState.four"
+           [warningMessage]="'Some warning message!'">>
+    <template md-step-label>Label 4</template>
+    <template md-step-content>
+      This is the body of step four.
+      <br>
+      <br>
+      <br>
+
+      <button md-button (click)="validState.four = !validState.four">Toggle valid</button>
+      <button md-button (click)="savingState.four = !savingState.four">Toggle saving</button>
+      <button md-button (click)="feedbackState.four = !feedbackState.four">Toggle feedback</button>
+      <button md-button (click)="warningState.four = !warningState.four">Toggle warning</button>
+    </template>
+    <template md-step-nav>
+      <button md-button (click)="stepper1.previousStep()">BACK</button>
+      <button md-button [disabled]="!validState.four" (click)="stepper1.nextStep()">NEXT</button>
+    </template>
+  </md-step>
+</md-stepper>
+
+
+
+
+
+
+
+
+<h1>Stepper - mode: linear, orientation: horizontal</h1>
+
+<md-stepper class="demo-stepper" mode="linear" orientation="horizontal" #stepper2>
+  <md-step [valid]="validState.one" [editable]="false">
+    <template md-step-label>Label 1</template>
+    <template md-step-content>
+      This is the body of step one.
+      <br>
+      <br>
+      <br>
+      <button md-button (click)="validState.one = !validState.one">Toggle valid</button>
+    </template>
+    <template md-step-nav>
+      <button md-button [disabled]="!validState.one" (click)="stepper2.nextStep()">NEXT</button>
+    </template>
+  </md-step>
+  <md-step [valid]="validState.two">
+    <template md-step-label>Label 2</template>
+    <template md-step-content>
+      This is the body of step two.
+      <br>
+      <br>
+      <br>
+
+      <button md-button (click)="validState.two = !validState.two">Toggle valid</button>
+    </template>
+    <template md-step-nav>
+      <button md-button (click)="stepper2.previousStep()">BACK</button>
+      <button md-button [disabled]="!validState.two" (click)="stepper2.nextStep()">NEXT</button>
+    </template>
+  </md-step>
+  <md-step [valid]="validState.three" [editable]="false">
+    <template md-step-label>Label 3</template>
+    <template md-step-content>
+      This is the body of step three.
+      <br>
+      <br>
+      <br>
+
+      <button md-button (click)="validState.three = !validState.three">Toggle valid</button>
+    </template>
+    <template md-step-nav>
+      <button md-button (click)="stepper2.previousStep()">BACK</button>
+      <button md-button [disabled]="!validState.three" (click)="stepper2.nextStep()">NEXT</button>
+    </template>
+  </md-step>
+  <md-step [valid]="validState.four">
+    <template md-step-label>Label 4</template>
+    <template md-step-content>
+      This is the body of step four.
+      <br>
+      <br>
+      <br>
+
+      <button md-button (click)="validState.four = !validState.four">Toggle valid</button>
+    </template>
+    <template md-step-nav>
+      <button md-button (click)="stepper2.previousStep()">BACK</button>
+      <button md-button [disabled]="!validState.four" (click)="stepper2.nextStep()">NEXT</button>
+    </template>
+  </md-step>
+</md-stepper>
+
+
+
+
+
+
+
+<!--
+<h1>Stepper Demo</h1>
+
+<md-stepper class="demo-step-group" #stepper2>
+  <md-step *ngFor="let step of steps; let i = index" [disabled]="i == 1" [(valid)]="step.valid">
+    <template md-step-label>{{step.label}}</template>
+    <template md-step-content>
+      {{step.content}}
+      <br>
+      <br>
+      <br>
+      <md-input placeholder="Step Label" [(ngModel)]="step.label"></md-input>
+      <button md-button (click)="step.valid = !step.valid">Toggle valid</button>
+    </template>
+    <template md-step-nav>
+      <button md-button *ngIf="i !== 0" (click)="stepper2.selectPreviousStep()">BACK</button>
+      <button md-button [disabled]="!step.valid" (click)="stepper2.selectNextStep()">NEXT</button>
+    </template>
+  </md-step>
+</md-stepper>
+
+<h1>Async Steps</h1>
+
+<md-stepper class="demo-step-group" #stepper3>
+  <md-step *ngFor="let step of asyncSteps | async; let i = index" [disabled]="i == 1" [(valid)]="step.valid">
+    <template md-step-label>{{step.label}}</template>
+    <template md-step-content>
+      {{step.content}}
+      <br>
+      <br>
+      <br>
+      <md-input placeholder="Step Label" [(ngModel)]="step.label"></md-input>
+      <button md-button (click)="step.valid = !step.valid">Toggle valid</button>
+    </template>
+    <template md-step-nav>
+      <button md-button *ngIf="i !== 0" (click)="stepper3.selectPreviousStep()">BACK</button>
+      <button md-button [disabled]="!step.valid" (click)="stepper3.selectNextStep()">NEXT</button>
+    </template>
+  </md-step>
+</md-stepper>
+-->

@@ -33,6 +33,7 @@ import {SnackBarDemo} from './snack-bar/snack-bar-demo';
 import {PortalDemo, ScienceJoke} from './portal/portal-demo';
 import {MenuDemo} from './menu/menu-demo';
 import {TabsDemo} from './tabs/tab-group-demo';
+import {StepperDemo} from './stepper/stepper-demo';
 
 
 
@@ -76,6 +77,7 @@ import {TabsDemo} from './tabs/tab-group-demo';
     SliderDemo,
     SlideToggleDemo,
     SpagettiPanel,
+    StepperDemo,
     TabsDemo,
     ToolbarDemo,
     TooltipDemo,

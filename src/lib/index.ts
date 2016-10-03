@@ -19,6 +19,7 @@ export * from './sidenav/index';
 export * from './slider/index';
 export * from './slide-toggle/index';
 export * from './snack-bar/index';
+export * from './stepper/index';
 export * from './tabs/index';
 export * from './toolbar/index';
 export * from './tooltip/index';
